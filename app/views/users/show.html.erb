@@ -1,3 +1,11 @@
-<h1>User#show</h1>
-<p>Find me in app/views/user/show.html.erb</p>
+<h1> Events</h1>
+
+<%= @events.each do |event| %>
+	<ul>
+		<li>
+			<%= event if current_user = event.user %>
+		</li>
+	</ul>
+<% end %>
+
 
