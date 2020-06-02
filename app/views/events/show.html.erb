@@ -4,13 +4,21 @@
 <strong>Event: </strong>
 <%= @event.name %><br>
 <strong>Created By: </strong>
-<%= @event.creator.username %>
+<%= @event.creator.username %><br>
+<strong>Start Date: </strong>
+<%= @event.start_date %>
+<br><br>
+<p><strong>Attendees: </strong></p>
 
-<% @events.attendees.each do |a| %>
+<% @event.attendees.each do |a| %>
 	<ul>
 		<li>
 			<%= a.username %>
 		</li>
 	</ul>
 
+<% end %>
+
+<% if current_user != @event.creator %>
+<%= link_to 'Join Event', event_join_path(:event_id => @event.id) %>
 <% end %>
