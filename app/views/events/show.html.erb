@@ -6,4 +6,11 @@
 <strong>Created By: </strong>
 <%= @event.creator.username %>
 
+<% @events.attendees.each do |a| %>
+	<ul>
+		<li>
+			<%= a.username %>
+		</li>
+	</ul>
 
+<% end %>

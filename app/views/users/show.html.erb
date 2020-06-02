@@ -1,5 +1,14 @@
-
+<p>Created Events: </p>
 <% current_user.created_events.each do |event| %>
+<ul>
+	<li>
+		<%= event.name %>
+	</li>
+</ul>
+<% end %>
+
+<p>Atended events: </p>
+<% current_user.attended_events.each do |event| %>
 <ul>
 	<li>
 		<%= event.name %>
