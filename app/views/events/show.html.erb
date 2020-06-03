@@ -5,8 +5,8 @@
 <%= @event.name %><br>
 <strong>Created By: </strong>
 <%= @event.creator.username %><br>
-<strong>Start Date: </strong>
-<%= @event.start_date %>
+<strong>Date: </strong>
+<%= l @event.start_date, format: :date_format %>
 <br><br>
 <p><strong>Attendees: </strong></p>
 
