@@ -5,4 +5,12 @@ class Event < ApplicationRecord
 	has_many :attendees, through: :attendances, source: :attendee
 
 	validates :name, presence: true, uniqueness: true
+
+	def self.past
+		self.where("start_date < ?", Time.now)
+	end
+
+	def self.upcoming
+		self.where("start_date > ?", Time.now)
+	end
 end
