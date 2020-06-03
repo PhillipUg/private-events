@@ -5,6 +5,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :attendee
 
   validates :name, presence: true, uniqueness: true
+  validates :location, presence: true
 
   scope :past, -> { where('start_date < ?', Time.now) }
   scope :upcoming, -> { where('start_date > ?', Time.now) }
