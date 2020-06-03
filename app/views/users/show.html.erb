@@ -1,8 +1,15 @@
+<h1>My Events</h1>
+
 <h3>Created Events: </h3>
 <% current_user.created_events.each do |event| %>
 <ul>
 	<li>
+		<strong>Event: </strong>		
 		<%= event.name %>
+		<strong>Location: </strong>
+		<%= event.location %>
+		<strong>Date:</strong>
+		<%= l event.start_date, format: :date_format %>
 		<%= link_to 'Show', event_path(event) %>
 	</li>
 </ul>
@@ -13,8 +20,10 @@
 <% upcoming_events.each do |event| %>
 <ul>
 	<li>
-	
+	<strong>Event: </strong>		
 		<%= event.name %>
+		<strong>Location: </strong>
+		<%= event.location %>
 		<strong>Date:</strong>
 		<%= l event.start_date, format: :date_format %>
 		<%= link_to 'Show', event_path(event) %>
@@ -27,7 +36,10 @@
 <% previous_events.each do |event| %>
 <ul>
 	<li>
+		<strong>Event: </strong>		
 		<%= event.name %>
+		<strong>Location: </strong>
+		<%= event.location %>
 		<strong>Date:</strong>
 		<%= l event.start_date, format: :date_format %>
 		<%= link_to 'Show', event_path(event) %>
