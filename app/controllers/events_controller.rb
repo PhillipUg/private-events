@@ -4,19 +4,20 @@ class EventsController < ApplicationController
 
   def index
   	@events = Event.all
+    @event = Event.new
   end
 
   def new
-  	@event = current_user.created_events.new
+  	@event = current_user.created_events.build
   end
 
   def create
   	@event = current_user.created_events.build(event_params)
   	if @event.save
-	  	redirect_to @event, notice: "Event Successfully Created!"
-	  else
-	  	render :new
-	  end
+      redirect_to @event, notice: "Event Successfully Created!"
+    else
+      render :new
+    end
   end
 
   def show
@@ -25,11 +26,14 @@ class EventsController < ApplicationController
 
   def join
     @attendance = Attendance.join_event(current_user.id, params[:event_id])
-    @attendance.save
-      redirect_to event_path(params[:event_id]), notice: "Successfully Joined event"
-    # # else
-    # #   flash.now.alert = "Failed to Join Event"
-    # end
+    if @attendance.save
+      flash[:notice] = "Successfully Joined event" 
+      redirect_to event_path(params[:event_id])
+    else
+      flash[:alert] = "Already Joined Event" 
+      
+      redirect_to event_path(params[:event_id])
+    end
   end
 
   private
