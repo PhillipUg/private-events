@@ -6,11 +6,7 @@ class Event < ApplicationRecord
 
 	validates :name, presence: true, uniqueness: true
 
-	def self.past
-		self.where("start_date < ?", Time.now)
-	end
+	scope :past, -> {where("start_date < ?", Time.now)}
+	scope :upcoming, -> {where("start_date > ?", Time.now)}
 
-	def self.upcoming
-		self.where("start_date > ?", Time.now)
-	end
 end
