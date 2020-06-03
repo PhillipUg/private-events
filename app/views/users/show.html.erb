@@ -15,7 +15,7 @@
 	<li>
 	
 		<%= event.name %>
-
+		<strong>Date:</strong>
 		<%= l event.start_date, format: :date_format %>
 		<%= link_to 'Show', event_path(event) %>
 	
@@ -28,8 +28,16 @@
 <ul>
 	<li>
 		<%= event.name %>
+		<strong>Date:</strong>
 		<%= l event.start_date, format: :date_format %>
 		<%= link_to 'Show', event_path(event) %>
 	</li>
 </ul>
 <% end %> 
+<br>
+<br>
+<hr>
+
+<% if current_user %>      
+<%= link_to 'Create New Event', new_event_path %>
+<% end %>
