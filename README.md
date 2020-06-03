@@ -1,7 +1,6 @@
-# Project: Members Only! 
+# Project: Private Events 
 
-An Authentication and Authorization system where users can only access areas of a site they are authorized to.
-
+A simple events app that allows users to create events and then manage user signups. 
 
 
 <!--
@@ -28,21 +27,21 @@ An Authentication and Authorization system where users can only access areas of 
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/PhillipUg/members-only">
+  <a href="https://github.com/PhillipUg/private-events">
     <img src="app/assets/images/microverse.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h1 align="center">Project: Members Only!</h1>
+  <h1 align="center">Project: Private Events</h1>
 
   <p align="center">
     This project is part of the Microverse curriculum in Ruby on Rails module!
     <br />
-    <a href="https://github.com/PhillipUg/members-only"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/PhillipUg/private-events"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/PhillipUg/members-only/issues">Report Bug</a>
+    <a href="https://github.com/PhillipUg/private-events/issues">Report Bug</a>
     ·
-    <a href="https://github.com/PhillipUg/members-only/issues">Request Feature</a>
+    <a href="https://github.com/PhillipUg/private-events/issues">Request Feature</a>
   </p>
 </p>
 
@@ -51,6 +50,7 @@ An Authentication and Authorization system where users can only access areas of 
 
 * [About the Project](#about-the-project)
   * [Built With](#built-with)
+  * [Testing](#Testing)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 * [License](#license)
@@ -58,7 +58,7 @@ An Authentication and Authorization system where users can only access areas of 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-In this project, i built an exclusive clubhouse where members can write embarrassing posts about non-members. Inside the clubhouse, members can see who the author of a post is but, outside, they can only see the story and wonder who wrote it.
+In this project, i have created a simple events app where users can create and attend many events. An event can be attended by many users. This required modeling many-to-many associations between models.
 
 
 <!-- ABOUT THE PROJECT -->
@@ -66,16 +66,16 @@ In this project, i built an exclusive clubhouse where members can write embarras
 
 To use application this is what you need to:
 * Have ruby installed in your computer
-* [Download](https://github.com/PhillipUg/members-only/archive/master.zip) or clone this repo:
+* [Download](https://github.com/PhillipUg/private-events/archive/master.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:PhillipUg/members-only.git
+    git@github.com:PhillipUg/private-events.git
   ```
   - Clone with HTTPS
   ```
-    https://github.com/PhillipUg/members-only.git
+    https://github.com/PhillipUg/private-events.git
   ```
-* `cd` into `members-only` directory and run `bundle install`
+* `cd` into `private-events` directory and run `bundle install`
 * Finally, run `rails server` in your terminal.
 
 
@@ -84,8 +84,15 @@ To use application this is what you need to:
 This project was built using:
 * Ruby v2.7.1
 * Ruby on Rails v6.0.3
-* Devise, Hirb, better_errors (...and a couple of other default rails gems)
+* ...and a couple of other default rails gems
 
+
+### Testing
+I use `rspec-rails` and `capybara` gems for testing.
+
+To see checkout my test suite:
+ * follow the installation instructions
+ * after installation, run `bundle exec rspec`
 
 <!-- CONTACT -->
 ## Contact
@@ -105,14 +112,14 @@ This project was built using:
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/PhillipUg/members-only.svg?style=flat-square
-[contributors-url]: https://github.com/PhillipUg/members-only/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/PhillipUg/members-only.svg?style=flat-square
-[forks-url]: https://github.com/PhillipUg/members-only/network/members
-[stars-shield]: https://img.shields.io/github/stars/PhillipUg/members-only.svg?style=flat-square
-[stars-url]: https://github.com/PhillipUg/members-only/stargazers
-[issues-shield]: https://img.shields.io/github/issues/PhillipUg/members-only.svg?style=flat-square
-[issues-url]: https://github.com/PhillipUg/members-only/issues
+[contributors-shield]: https://img.shields.io/github/contributors/PhillipUg/private-events.svg?style=flat-square
+[contributors-url]: https://github.com/PhillipUg/private-events/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/PhillipUg/private-events.svg?style=flat-square
+[forks-url]: https://github.com/PhillipUg/private-events/network/members
+[stars-shield]: https://img.shields.io/github/stars/PhillipUg/private-events.svg?style=flat-square
+[stars-url]: https://github.com/PhillipUg/private-events/stargazers
+[issues-shield]: https://img.shields.io/github/issues/PhillipUg/private-events.svg?style=flat-square
+[issues-url]: https://github.com/PhillipUg/private-events/issues
 
 
 ## 📝 License
