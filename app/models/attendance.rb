@@ -5,10 +5,10 @@ class Attendance < ApplicationRecord
   validates :attendee, uniqueness: true, if: :already_attended?
 
   def already_attended?
-  	attended_event.attendees.include?(attendee)
+    attended_event.attendees.include?(attendee)
   end
 
   def self.join_event(user_id, event_id)
-  	self.create(attendee_id: user_id, attended_event_id: event_id)
+    create(attendee_id: user_id, attended_event_id: event_id)
   end
 end
