@@ -3,11 +3,11 @@
 <%= form_with(model: @event, local: true) do |f|%>
 
 <%= f.label :Description %> <br>
-<%= f.text_field :name, autofocus: true, placeholder: "Enter description" %><br>
+<%= f.text_field :name, autofocus: true, placeholder: "Enter description", id: :name %><br>
 <%= f.label :Location %> <br>
-<%= f.text_field :location, placeholder: "Enter a location" %><br>
+<%= f.text_field :location, placeholder: "Enter a location", id: :location %><br>
 <%= f.label :Date%> <br>
-<%= f.date_field :start_date %><br><br>
+<%= f.date_field :start_date, id: :start_date %><br><br>
 
 <%= f.submit "Create Event" %>
 <% end %>

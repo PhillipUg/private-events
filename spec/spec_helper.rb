@@ -64,7 +64,7 @@ RSpec.configure do |config|
   #   - http://rspec.info/blog/2012/06/rspecs-new-expectation-syntax/
   #   - http://www.teaisaweso.me/blog/2013/05/27/rspecs-new-message-expectation-syntax/
   #   - http://rspec.info/blog/2014/05/notable-changes-in-rspec-3/#zero-monkey-patching-mode
-  config.disable_monkey_patching!
+  # config.disable_monkey_patching!
 
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
@@ -92,4 +92,24 @@ RSpec.configure do |config|
   # test failures related to randomization by passing the same `--seed` value
   # as the one that triggered the failure.
   Kernel.srand config.seed
+end
+
+def create_user(username)
+  visit new_user_path
+  fill_in :username, with: username
+  click_button "Sign Up"
+end
+
+def signin_user(username)
+  visit login_path
+  fill_in :username, with: username
+  click_button "Login"
+end
+
+def create_event(name, location, date)
+  visit new_event_path
+  find_field(:Description).set(name)
+  fill_in :Location, with: location
+  fill_in :start_date, with: date
+  click_button "Create Event"
 end

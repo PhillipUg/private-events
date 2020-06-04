@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: 'User Successfully Created!'
     else
+      flash[:notice] = 'Username Cant be Blank!'
       render :new
     end
   end
