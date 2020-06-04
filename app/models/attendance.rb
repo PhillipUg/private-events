@@ -4,7 +4,6 @@ class Attendance < ApplicationRecord
 
   validates :attendee, uniqueness: true
 
-
   def self.join_event(user_id, event_id)
     create(attendee_id: user_id, attended_event_id: event_id)
   end

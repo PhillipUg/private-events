@@ -32,15 +32,15 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara'
+  gem 'factory_bot_rails', '~> 5.2'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
   gem 'selenium-webdriver'
-  gem 'factory_bot_rails', '~> 5.2'
 end
 
 group :test do
   gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
-  gem 'shoulda-matchers', '~> 4.3'
   gem 'rails-controller-testing'
+  gem 'shoulda-matchers', '~> 4.3'
 end
 
 group :development do

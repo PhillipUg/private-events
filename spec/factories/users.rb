@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :user, aliases: [:creator, :attendee] do
-    username { "User1" }
+  factory :user, aliases: %i[creator attendee] do
+    username { 'User1' }
   end
 end

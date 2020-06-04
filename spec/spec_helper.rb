@@ -97,13 +97,13 @@ end
 def create_user(username)
   visit new_user_path
   fill_in :username, with: username
-  click_button "Sign Up"
+  click_button 'Sign Up'
 end
 
 def signin_user(username)
   visit login_path
   fill_in :username, with: username
-  click_button "Login"
+  click_button 'Login'
 end
 
 def create_event(name, location, date)
@@ -111,5 +111,5 @@ def create_event(name, location, date)
   find_field(:Description).set(name)
   fill_in :Location, with: location
   fill_in :start_date, with: date
-  click_button "Create Event"
+  click_button 'Create Event'
 end
