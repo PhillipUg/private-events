@@ -105,11 +105,3 @@ def signin_user(username)
   fill_in :username, with: username
   click_button 'Login'
 end
-
-def create_event(name, location, date)
-  visit new_event_path
-  find_field(:Description).set(name)
-  fill_in :Location, with: location
-  fill_in :start_date, with: date
-  click_button 'Create Event'
-end
