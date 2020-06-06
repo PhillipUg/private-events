@@ -3,7 +3,7 @@
 
 
 <h3>Upcoming Events: </h3>
-<% upcoming.each do |event| %>
+<% @upcoming_events.each do |event| %>
 <ul>
 	<li>
 		<strong>Event: </strong>
@@ -21,7 +21,7 @@
 <% end %>
 
 <h3>Previously Attended Events: </h3>
-<% past.each do |event| %>
+<% @previous_events.each do |event| %>
 <ul>
 	<li>
 		<strong>Event: </strong>		

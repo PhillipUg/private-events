@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :user, aliases: %i[creator attendee] do
-    username { 'User1' }
+    sequence(:username) { |n| "New username#{n}" }
   end
 end

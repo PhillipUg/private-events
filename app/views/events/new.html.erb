@@ -3,7 +3,7 @@
 <%= form_with(model: @event, local: true) do |f|%>
 
 <%= f.label :Description %> <br>
-<%= f.text_field :name, autofocus: true, placeholder: "Enter description", id: :name %><br>
+<%= f.text_field :name, autofocus: true, placeholder: "Enter description", id: "name" %><br>
 <%= f.label :Location %> <br>
 <%= f.text_field :location, placeholder: "Enter a location", id: :location %><br>
 <%= f.label :Date%> <br>

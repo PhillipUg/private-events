@@ -7,7 +7,7 @@ RSpec.describe Attendance, type: :model do
   subject { create(:attendance, attended_event: event1, attendee: user1) }
 
   describe 'validations' do
-    it { should validate_uniqueness_of(:attendee).on(:already_attended?) }
+    it { should validate_uniqueness_of(:attendee) }
   end
 
   describe 'associations' do

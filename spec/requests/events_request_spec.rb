@@ -10,7 +10,7 @@ RSpec.describe 'Events', type: :request do
       create(:event, creator: user)
       get events_path
       expect(response).to be_successful
-      expect(response.body).to include('My New Event')
+      expect(response.body).to include('My new Location')
     end
   end
 
