@@ -1,0 +1,26 @@
+<h1> Events</h1>
+
+
+<strong>Event: </strong>
+<%= @event.name %><br>
+<strong>Location:</strong>
+		<%= @event.location %><br>
+<strong>Created By: </strong>
+<%= @event.creator.username %><br>
+<strong>Date: </strong>
+<%= l @event.start_date, format: :date_format %>
+<br><br>
+<p><strong>Attendees: </strong></p>
+
+<% @event.attendees.each do |a| %>
+	<ul>
+		<li>
+			<%= a.username %>
+		</li>
+	</ul>
+
+<% end %>
+
+<% if current_user != @event.creator %>
+<%= link_to 'Join Event', event_join_path(:event_id => @event.id) %>
+<% end %>
