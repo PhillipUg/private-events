@@ -1,0 +1,47 @@
+<h1>All Events</h1>
+
+
+
+<h3>Upcoming Events: </h3>
+<% @upcoming_events.each do |event| %>
+<ul>
+	<li>
+		<strong>Event: </strong>
+		<%= event.name %>
+		<strong>Location:</strong>
+		<%= event.location %>	
+		<strong>Created By:</strong>
+		<%= event.creator.username %>	
+		<strong>Date:</strong>
+		<%= l event.start_date, format: :date_format %>
+		<%= link_to 'Show', event_path(event) %>
+
+	</li>
+</ul>
+<% end %>
+
+<h3>Previously Attended Events: </h3>
+<% @previous_events.each do |event| %>
+<ul>
+	<li>
+		<strong>Event: </strong>		
+		<%= event.name %>
+		<strong>Location:</strong>
+		<%= event.location %>
+		<strong>Created By:</strong>
+		<%= event.creator.username %>	
+		<strong>Date:</strong>
+		<%= l event.start_date, format: :date_format %>
+		<%= link_to 'Show', event_path(event) %>
+	</li>
+</ul>
+<% end %>
+
+<br>
+<br>
+<br>
+<hr>
+
+<% if current_user %>      
+<%= link_to 'Create New Event', new_event_path %>
+<% end %>
